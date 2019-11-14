@@ -1,5 +1,5 @@
 <section fxLayout class="calendar-filter">
-    <mat-form-field appearance="outline">
+    <mat-form-field fxFlex appearance="outline">
         <mat-label>Month</mat-label>
         <mat-select [value]="filter.month" (selectionChange)="setMonth($event.value)">
             <mat-option *ngFor="let month of months" [value]="month.key">
@@ -7,7 +7,7 @@
             </mat-option>
         </mat-select>
     </mat-form-field>
-    <mat-form-field fxFlexOffset="20px" appearance="outline">
+    <mat-form-field fxFlex fxFlexOffset="20px" appearance="outline">
         <mat-label>Year</mat-label>
         <mat-select [value]="filter.year" (selectionChange)="setYear($event.value)">
             <mat-option *ngFor="let year of years" [value]="year">

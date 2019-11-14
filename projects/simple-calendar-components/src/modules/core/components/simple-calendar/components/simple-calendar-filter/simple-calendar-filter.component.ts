@@ -10,8 +10,6 @@ import { Filter } from '../../../../models/filter.model';
     styles: []
 })
 export class SimpleCalendarFilterComponent implements OnInit {
-    private _simpleCalendarService: SimpleCalendarService;
-
     months: Month[];
     years: Number[];
 
@@ -19,9 +17,9 @@ export class SimpleCalendarFilterComponent implements OnInit {
 
     constructor(
         calendarService: CalendarService,
-        simpleCalendarService: SimpleCalendarService
+        private simpleCalendarService: SimpleCalendarService
     ) {
-        this._simpleCalendarService = simpleCalendarService;
+        simpleCalendarService = simpleCalendarService;
 
         this.months = calendarService.getMonths();
         this.years = calendarService.getYears();
@@ -35,10 +33,10 @@ export class SimpleCalendarFilterComponent implements OnInit {
     }
 
     setYear(year) {
-        this._simpleCalendarService.setCurrentYear(year);
+        this.simpleCalendarService.setCurrentYear(year);
     }
 
     setMonth(month) {
-        this._simpleCalendarService.setCurrentMonth(month);
+        this.simpleCalendarService.setCurrentMonth(month);
     }
 }

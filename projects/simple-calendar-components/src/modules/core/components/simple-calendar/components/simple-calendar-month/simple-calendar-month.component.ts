@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { SimpleCalendarService } from '../../services/simple.calendar.service';
-import { Moment } from 'moment';
+import { CalendarDay } from '../../../../models/calendar-day';
 
 @Component({
     selector: 'simple-calendar-month',
     templateUrl: './simple-calendar-month.component.html',
-    styles: []
+    styleUrls: ['./simple-calendar-month.component.scss']
 })
 export class SimpleCalendarMonthComponent implements OnInit {
-    monthDays: Array<Moment>;
+    monthDays: Array<CalendarDay>;
 
     constructor(simpleCalendarService: SimpleCalendarService) { 
         simpleCalendarService.$monthDays.subscribe(monthDays => {

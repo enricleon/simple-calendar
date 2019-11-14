@@ -1,9 +1,9 @@
-// @import '~normalize.css';
+@import '~normalize.css';
 
 /* You can add global styles to this file, and also import other style files */
 
 h1, h2, h3, h4 {
-    // font-weight: normal;
+    font-weight: normal;
 }
 
 html, body, app-root {
@@ -13,8 +13,8 @@ html, body, app-root {
 }
 
 body {
-    // font-weight: normal;
-    // font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     display: flex;
     flex-flow: column;
@@ -26,6 +26,6 @@ body {
     a, a:visited {
         color: initial;
         text-decoration: underline;
-        // text-decoration: none;
+        text-decoration: none;
     }
 }
