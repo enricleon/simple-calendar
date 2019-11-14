@@ -4,6 +4,7 @@ import { NgModule, Optional, SkipSelf, ModuleWithProviders } from '@angular/core
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AngularMaterialModule } from '../angular-material.module';
 import { SimpleCalendarComponentsModule } from 'simple-calendar-components';
@@ -19,6 +20,7 @@ import { HomeComponent } from './pages/home/home.component';
         RouterModule.forRoot([
             { path: '', component: HomeComponent, pathMatch: 'full' }
         ]),
+        FlexLayoutModule,
         AngularMaterialModule,
         SimpleCalendarComponentsModule
     ],
