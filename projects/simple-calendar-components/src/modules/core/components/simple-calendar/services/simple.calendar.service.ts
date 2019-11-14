@@ -50,7 +50,7 @@ export class SimpleCalendarService {
         });
 
         const filter = new Filter(
-            moment().month(), 
+            moment().month() + 1, 
             moment().year()
         );
 

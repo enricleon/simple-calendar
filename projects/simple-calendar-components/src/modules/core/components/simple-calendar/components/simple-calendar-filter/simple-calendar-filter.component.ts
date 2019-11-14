@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Month } from '../../../../models/month.model';
 import { CalendarService } from '../../../../services/calendar.service';
 import { SimpleCalendarService } from '../../services/simple.calendar.service';
+import { Filter } from '../../../../models/filter.model';
 
 @Component({
     selector: 'simple-calendar-filter',
@@ -14,6 +15,8 @@ export class SimpleCalendarFilterComponent implements OnInit {
     months: Month[];
     years: Number[];
 
+    filter: Filter;
+
     constructor(
         calendarService: CalendarService,
         simpleCalendarService: SimpleCalendarService
@@ -22,6 +25,10 @@ export class SimpleCalendarFilterComponent implements OnInit {
 
         this.months = calendarService.getMonths();
         this.years = calendarService.getYears();
+
+        simpleCalendarService.$filter.subscribe(filter => {
+            this.filter = filter;
+        });
     }
 
     ngOnInit() {
