@@ -4,9 +4,4 @@
             {{ weekDay | titlecase | slice:0:1 }}
         </mat-grid-tile>
     </mat-grid-list>
-    <mat-grid-list cols="7" rowHeight="1:1">
-        <mat-grid-tile *ngFor="let day of monthDays">
-            {{ day | date }}
-        </mat-grid-tile>
-    </mat-grid-list>
 </section>

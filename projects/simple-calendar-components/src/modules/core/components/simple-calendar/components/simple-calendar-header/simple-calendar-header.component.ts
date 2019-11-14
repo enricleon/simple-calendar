@@ -11,17 +11,11 @@ import { Moment } from 'moment';
 export class SimpleCalendarHeaderComponent implements OnInit {
 
     weekDays: Array<String>;
-    monthDays: Array<Moment>;
 
     constructor(
-        calendarService: CalendarService,
-        simpleCalendarService: SimpleCalendarService
+        calendarService: CalendarService
     ) {
         this.weekDays = calendarService.getWeekDays();
-
-        simpleCalendarService.$monthDays.subscribe(monthDays => {
-            this.monthDays = monthDays;
-        });
     }
 
     ngOnInit() {

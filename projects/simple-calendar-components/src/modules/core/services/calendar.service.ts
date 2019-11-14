@@ -24,9 +24,9 @@ export class CalendarService {
             return startYear + i;
         });
 
-        this.months = Array.apply(0, Array(12)).map((_, i) => {
+        this.months = Array.apply(1, Array(12)).map((_, i) => {
             return {
-                key: i,
+                key: i + 1,
                 name: moment().month(i).format('MMM')
             }
         });

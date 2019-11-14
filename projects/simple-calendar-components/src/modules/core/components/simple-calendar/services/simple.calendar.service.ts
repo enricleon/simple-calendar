@@ -32,24 +32,21 @@ export class SimpleCalendarService {
 
     constructor() {
         this.$filter.subscribe(filter => {
-            const startWeek = moment()
-                .month(filter.month)
-                .year(filter.year)
-                .startOf('month').week();
+            const currentMonthYear = moment()
+                .month(filter.month - 1)
+                .year(filter.year);
 
-            const endWeek = moment()
-                .month(filter.month)
-                .year(filter.year)
-                .endOf('month').week();
+            const startDay = currentMonthYear.clone().startOf('month').startOf('week');
+            const endDay = currentMonthYear.clone().endOf('month').endOf('week');
+            
+            let date = startDay.clone().subtract(1, 'day');
+            let calendar = [];
 
-            const monthDays = Array(endWeek - startWeek + 1).fill(0).map((v, i) => startWeek + i)
-                .reduce((acc, week) => {
-                    let days = Array(7).fill(0).map((n, i) => moment().week(week).startOf('week').clone().add(n + i, 'day'));
+            while (date.isBefore(endDay, 'day')) {
+                calendar = calendar.concat(Array(7).fill(0).map(() => date.add(1, 'day').clone()));
+            }
 
-                    return acc.concat(days);
-                }, []);
-
-            this._monthDays.next(monthDays);
+            this._monthDays.next(calendar);
         });
 
         const filter = new Filter(
