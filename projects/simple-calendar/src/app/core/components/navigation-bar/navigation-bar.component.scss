@@ -1,0 +1,14 @@
+@import 'theme';
+
+:host {
+  z-index: 2;
+
+  .home-link {
+    font-weight: 100;
+    text-decoration: none;
+  }
+  
+  & >>> .mat-toolbar-row {
+    padding: 30px;
+  }
+}

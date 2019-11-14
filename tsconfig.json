@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "simple-calendar-components": [
+        "dist/simple-calendar-components"
+      ],
+      "simple-calendar-components/*": [
+        "dist/simple-calendar-components/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
