@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SimpleCalendarComponentsComponent } from './simple-calendar-components.component';
+import { SimpleCalendarComponentsComponent } from './simple-calendar.component';
 
 describe('SimpleCalendarComponentsComponent', () => {
   let component: SimpleCalendarComponentsComponent;
