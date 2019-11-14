@@ -1,3 +1,9 @@
+import * as moment_ from 'moment';
+const moment = moment_;
+
+import 'moment/locale/es'  // without this line it didn't work
+moment.locale('es')
+
 import { Injectable } from '@angular/core';
 import { Month } from '../models/month.model';
 
@@ -9,6 +15,7 @@ const startYear = 1975;
 export class CalendarService {
     private months: Array<Month>;
     private years: Array<Number>;
+    private weekDays: Array<String>;
 
     constructor() {
         const currentYear = new Date().getFullYear();
@@ -16,20 +23,15 @@ export class CalendarService {
         this.years = Array(currentYear - startYear + 1).fill(null).map((v, i) => {
             return startYear + i;
         });
-        this.months = [
-            {key: 1, name: 'January'},
-            {key: 2, name: 'February'},
-            {key: 3, name: 'March'},
-            {key: 4, name: 'April'},
-            {key: 5, name: 'May'},
-            {key: 6, name: 'June'},
-            {key: 7, name: 'July'},
-            {key: 8, name: 'August'},
-            {key: 9, name: 'September'},
-            {key: 10, name: 'October'},
-            {key: 11, name: 'November'},
-            {key: 12, name: 'December'}
-        ];
+
+        this.months = Array.apply(0, Array(12)).map((_, i) => {
+            return {
+                key: i,
+                name: moment().month(i).format('MMM')
+            }
+        });
+
+        this.weekDays = moment.weekdays(true);
     }
 
     getMonths() {
@@ -38,5 +40,9 @@ export class CalendarService {
 
     getYears() {
         return this.years;
+    }
+
+    getWeekDays(): Array<String> {
+        return this.weekDays;
     }
 }

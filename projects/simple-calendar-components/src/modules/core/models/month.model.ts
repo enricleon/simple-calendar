@@ -1,4 +1,4 @@
-export interface Month {
+export class Month {
     key: number;
     name: string;
 }
