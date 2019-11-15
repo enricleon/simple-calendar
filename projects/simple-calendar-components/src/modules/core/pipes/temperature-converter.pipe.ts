@@ -5,17 +5,20 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TemperatureConverterPipe implements PipeTransform {
 
-    transform(value: number, unit: string) {
+    transform(value: string, unit: string) {
+        if(value !== null && value !== undefined) {
+            let parsedValue =  parseFloat(value);
 
-        if (value && !isNaN(value)) {
+            if (parsedValue && !isNaN(parsedValue)) {
 
-            if (unit === 'C') {
-                var tempareature = (value - 273.15);
-                return tempareature.toFixed(2);
-            }
-            if (unit === 'K') {
-                var tempareature = (value + 273.15);
-                return tempareature.toFixed(2);
+                if (unit === 'C') {
+                    let tempareature = (parsedValue - 273.15);
+                    return tempareature.toFixed(2);
+                }
+                if (unit === 'K') {
+                    let tempareature = (parsedValue + 273.15);
+                    return tempareature.toFixed(2);
+                }
             }
         }
         return;

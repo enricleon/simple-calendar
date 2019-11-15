@@ -1,0 +1,26 @@
+:host {
+    position: relative;
+    text-align: center;
+    height: auto;
+
+    &:before {
+        content:'';
+        float: left;
+        padding-top: 100%;
+    }
+
+    &.today {
+        border: 2px solid red;
+        border-radius: 100%;
+        padding: 10px;
+    }
+
+    .weather-info {
+        position: absolute;
+        bottom: 0;
+        font-size: 11px;
+        text-align: center;
+        left: 0;
+        right: 0;
+    }
+}

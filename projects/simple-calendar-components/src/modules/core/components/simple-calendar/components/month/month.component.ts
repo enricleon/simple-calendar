@@ -3,11 +3,11 @@ import { SimpleCalendarService } from '../../services/simple.calendar.service';
 import { CalendarDay } from '../../../../models/calendar-day';
 
 @Component({
-    selector: 'simple-calendar-month',
-    templateUrl: './simple-calendar-month.component.html',
-    styleUrls: ['./simple-calendar-month.component.scss']
+    selector: 'sc-month',
+    templateUrl: './month.component.html',
+    styleUrls: ['./month.component.scss']
 })
-export class SimpleCalendarMonthComponent implements OnInit {
+export class MonthComponent implements OnInit {
     monthDays: Array<CalendarDay>;
 
     constructor(simpleCalendarService: SimpleCalendarService) { 

@@ -1,0 +1,6 @@
+<sc-month-header></sc-month-header>
+<section class="month-days">
+    <sc-week *ngFor="let week of monthDays | chunk:7"
+        [week]="week"
+    ></sc-week>
+</section>

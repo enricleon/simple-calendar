@@ -5,11 +5,11 @@ import { SimpleCalendarService } from '../../services/simple.calendar.service';
 import { Filter } from '../../../../models/filter.model';
 
 @Component({
-    selector: 'simple-calendar-filter',
-    templateUrl: './simple-calendar-filter.component.html',
+    selector: 'sc-filter',
+    templateUrl: './filter.component.html',
     styles: []
 })
-export class SimpleCalendarFilterComponent implements OnInit {
+export class FilterComponent implements OnInit {
     months: Month[];
     years: Number[];
 
