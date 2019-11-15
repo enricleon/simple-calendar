@@ -12,6 +12,7 @@ import { SimpleCalendarComponentsModule } from 'simple-calendar-components';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import { HomeComponent } from './pages/home/home.component';
 
+import { environment } from '../../environments/environment';
 
 @NgModule({
     imports: [
@@ -23,8 +24,8 @@ import { HomeComponent } from './pages/home/home.component';
         FlexLayoutModule,
         AngularMaterialModule,
         SimpleCalendarComponentsModule.forRoot({
-            openWeatherApiKey: 'd64ea9f580681f5735117b134dbe7057',
-            openWeatherApiUrl: 'http://api.openweathermap.org/data/2.5'
+            openWeatherApiKey: environment.openWeatherApiKey,
+            openWeatherApiUrl: environment.openWeatherApiUrl
         })
     ],
     declarations: [
